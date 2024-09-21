@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 export default function MyApp() {
   const [count, setCount] = useState(0);
@@ -16,12 +17,17 @@ export default function MyApp() {
     setCount(0);
   }
 
+  const changeCount = (event) => {
+    setCount(event.target.value - 1 + 1);
+  };
+
   return (
     <div>
       <ButtonPlus count={count} onClick={numberPlus} />
       <p>{count}</p>
       <ButtonMinus count={count} onClick={numberMinus} />
       <ButtonReset count={count} onClick={numberReset} />
+      <input defaultValue={count} onChange={changeCount} />
     </div>
   );
 }
