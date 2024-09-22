@@ -1,21 +1,21 @@
 import { useState } from "react";
 import "./App.css";
 
-export default function MyApp() {
+const MyApp = () => {
   const [count, setCount] = useState(0);
 
-  function numberPlus() {
+  const numberPlus = () => {
     setCount(count + 1);
-  }
+  };
 
-  function numberMinus() {
+  const numberMinus = () => {
     setCount(count - 1);
-  }
+  };
 
-  function numberReset() {
+  const numberReset = () => {
     alert("Your count has been reset.");
     setCount(0);
-  }
+  };
 
   const changeCount = (event) => {
     setCount(event.target.value - 1 + 1);
@@ -30,16 +30,18 @@ export default function MyApp() {
       <input defaultValue={count} onChange={changeCount} />
     </div>
   );
-}
+};
 
-function ButtonPlus({ count, onClick }) {
+const ButtonPlus = ({ count, onClick }) => {
   return <button onClick={onClick}>+</button>;
-}
+};
 
-function ButtonMinus({ count, onClick }) {
+const ButtonMinus = ({ count, onClick }) => {
   return <button onClick={onClick}>-</button>;
-}
+};
 
-function ButtonReset({ count, onClick }) {
+const ButtonReset = ({ count, onClick }) => {
   return <button onClick={onClick}>Reset</button>;
-}
+};
+
+export default MyApp;
