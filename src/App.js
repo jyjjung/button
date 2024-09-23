@@ -26,8 +26,14 @@ const MyApp = () => {
       <ButtonPlus count={count} onClick={numberPlus} />
       <p>{count}</p>
       <ButtonMinus count={count} onClick={numberMinus} />
-      <ButtonReset count={count} onClick={numberReset} />
-      <input defaultValue={count} onChange={changeCount} />
+      <div>
+        <ButtonReset count={count} onClick={numberReset} />
+      </div>
+      <input
+        defaultValue="Your number input"
+        value={count}
+        onChange={changeCount}
+      />
     </div>
   );
 };
