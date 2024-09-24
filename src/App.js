@@ -30,8 +30,8 @@ const MyApp = () => {
         <ButtonReset count={count} onClick={numberReset} />
       </div>
       <input
-        defaultValue="Your number input"
-        value={count}
+        placeholder="Your number input"
+        defaultValue=""
         onChange={changeCount}
       />
     </div>
