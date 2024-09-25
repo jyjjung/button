@@ -13,27 +13,22 @@ const MyApp = () => {
   };
 
   const numberReset = () => {
-    alert("Your count has been reset.");
     setCount(0);
   };
 
-  const changeCount = (event) => {
-    setCount(event.target.value - 1 + 1);
+  const numberChange = (event) => {
+    setCount(prompt("Please enter your new number") - 1 + 1);
   };
 
   return (
     <div>
-      <ButtonPlus count={count} onClick={numberPlus} />
       <p>{count}</p>
-      <ButtonMinus count={count} onClick={numberMinus} />
-      <div>
-        <ButtonReset count={count} onClick={numberReset} />
+      <div class="plusMinus">
+        <ButtonPlus count={count} onClick={numberPlus} />
+        <ButtonMinus count={count} onClick={numberMinus} />
       </div>
-      <input
-        placeholder="Your number input"
-        defaultValue=""
-        onChange={changeCount}
-      />
+      <ButtonReset count={count} onClick={numberReset} />
+      <ButtonChangeNumber count={count} onClick={numberChange} />
     </div>
   );
 };
@@ -50,4 +45,7 @@ const ButtonReset = ({ count, onClick }) => {
   return <button onClick={onClick}>Reset</button>;
 };
 
+const ButtonChangeNumber = ({ count, onClick }) => {
+  return <button onClick={onClick}>Change number</button>;
+};
 export default MyApp;
