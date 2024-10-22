@@ -24,7 +24,7 @@ const MyApp = () => {
   };
 
   const numberRandom = () => {
-    setCount(Math.round((count+count*Math.random()) * 100) / 100);
+    setCount(Math.round(((Math.random()) * 100))/100+Math.round(Math.random()*100));
   };
 
   const numberReset = (event) => {
@@ -32,14 +32,38 @@ const MyApp = () => {
   };
 
   if(count>100){
-    setCount(0)
-    alert("Your number was above 100. Please try again.")
+    setCount(0);
+    alert("Your number was above 100. Please try again.");
   }
 
   if(count<0){
-    setCount(0)
-    alert("Your number was below 0. Please try again.")
+    setCount(0);
+    alert("Your number was below 0. Please try again.");
   }
+
+  document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+          setCount(Math.round((count-Math.random()) * 100) / 100);
+            break;
+        case 38:
+          setCount(Math.round(((Math.random()) * 100))/100+Math.round(Math.random()*100));
+            break;
+        case 39:
+          setCount(Math.round((count+Math.random()) * 100) / 100);
+            break;
+        case 40:
+          setCount(0);
+            break;
+       case 32:
+          setNum(randomNumberInRange(1, 100));
+            break;
+    }
+};
+
+if(count<num+0.001 &&count>num-0.001){
+  alert("You win! 🎉🎉🎉");
+}
 
   return (
     <div>
@@ -55,9 +79,9 @@ const MyApp = () => {
         </div>
         <div>
           <progress value={(count/num)} />
-          <progress value={(100-count)/(100-num)} />
+          <progress value={((100-count)/(100-num))} />
         </div>
-        <div>
+        <div class="buttons">
             <button onClick={handleClick}>
                 GENERATE NEW GOAL
             </button>

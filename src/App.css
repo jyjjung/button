@@ -16,6 +16,10 @@ body {
   background-color: rgb(39,39,42);
   border-radius: 10px;
   padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 button {
@@ -23,7 +27,7 @@ button {
   border: transparent;
   color: rgb(80,180,103);
   width: fit-content;
-  padding: 9px 15px;
+  padding: 9px 30px;
   border-radius: 10px;
   transition-duration: 0.4s;
   font-weight: 300;
