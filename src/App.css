@@ -22,6 +22,10 @@ body {
   justify-content: space-evenly;
 }
 
+.reset{
+  padding: 9px 38%;
+}
+
 button {
   background-color: transparent;
   border: transparent;
