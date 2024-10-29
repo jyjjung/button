@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import { waitFor } from "@testing-library/react";
 
 const MyApp = () => {
   const [num, setNum] = useState(0);
@@ -44,8 +43,10 @@ const MyApp = () => {
   }
 
   if(count<0){
-    setCount(0);
     alert("Your number was below 0. Please try again.");
+    setNum(randomNumberInRange(1, 99));
+    setCount(0);
+    setClick(0);
   }
 
   if(click>100){
